@@ -82,3 +82,53 @@ console.log(
   'If an empty string is passed in as a word, it should return 0: ', wordCounter(word, text));
 
 // Expected Output: 0
+
+// Test: "Return string to lowercase"
+text = "Hi there hey yo hi hi yay yo whoa there whoa... yay!"
+console.log('Should return string in lowercase: ', mostUsedWords(text));
+// Expected Output: 'hi there hey yo hi hi yay yo whoa there whoa... yay!
+
+// Test: "Return string split as array"
+text = "Hi there hey yo hi hi yay yo whoa there whoa... yay!"
+console.log('Should return string split as array: ', mostUsedWords(text));
+// Expected Output: 'hi there hey yo hi hi yay yo whoa there whoa... yay!
+
+// // Test: Return array sorted alphabetically
+// text = ['hi', 'there', 'hey', 'yo', 'hi', 'hi', 'yay', 'yo', 'whoa', 'there', 'whoa...', 'yay!']
+// console.log('Should array sorted alphabetically: ', mostUsedWords(text));
+// // Expected Output: 'hi there hey yo hi hi yay yo whoa there whoa... yay!
+
+
+
+// var censor = (function() {
+//   function convertToAsterisk(word) {
+//       var asteriskSentence = '';
+//       for(var asterisks=0;asterisks<word.length;asterisks++) {
+//           asteriskSentence+='*';
+//       }
+//       return asteriskSentence;
+//   }
+
+//   return function(sentence, bannedWords) {
+//       sentence    = sentence      || undefined;
+//       bannedWords = bannedWords   || undefined;
+
+//       if(sentence!==undefined && bannedWords!==undefined) {
+//           for(var word=0;word<bannedWords.length;word++) {
+//               sentence = sentence.replace(bannedWords[word], convertToAsterisk(bannedWords[word]));
+//           }
+//       }
+
+//       return sentence;
+//   };
+// })();
+
+
+// var sentence = 'I like apples, grapes, and peaches. My buddy likes pears';
+// var bannedWords = [
+//     'pears',
+//     'peaches',
+//     'grapes',
+//     'apples'
+// ];
+// sentence = censor(sentence, bannedWords);

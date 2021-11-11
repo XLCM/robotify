@@ -75,3 +75,46 @@ const word = "";
 const text = "red RED Red!";
 wordCounter(word, text);
 Expected Output: 0
+
+
+Describe: boldPassage()
+
+Test: "It should return a non-matching word in a p tag."
+Code:
+const word = "hello";
+const text = "yo";
+boldPassage(word, text);
+Expected Output: "<p>yo</p>"
+
+Test: "It should return a matching word in a b tag."
+Code:
+const word = "hello";
+const text = "hello";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b></p>"
+
+Test: "It should wrap words that match in `b` tags but not words that don't."
+Code:
+const word = "hello";
+const text = "hello there";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b> there</p>"
+
+
+Describe: mostUsedWords()
+
+Test: "Should return string as lowercase"
+Code: 
+text = "Hi there hey yo hi hi yay yo whoa there whoa... yay!"
+string.toLowerCase()
+Expected Output: "hi there hey yo hi hi yay yo woa there woa... yay!"
+
+Test: Should split string into array.
+text = "hi there hey yo hi hi yay yo woa there woa... yay!";
+mostUsedWords(text);
+Expected Output: ['hi', 'there', 'hey', 'yo', 'hi', 'hi', 'yay', 'yo', 'whoa', 'there', 'whoa...', 'yay!'];
+
+Test: Should return a sorted array of words in alphabetical order
+text = "hi there hey yo hi hi yay yo woa there woa... yay!";
+mostUsedWords(text);
+Expected Output: ['hi', 'there', 'hey', 'yo', 'hi', 'hi', 'yay', 'yo', 'whoa', 'there', 'whoa...', 'yay!'];

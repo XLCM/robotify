@@ -33,6 +33,24 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+function mostUsedWords(text) {
+// let counter = []; // empty array to hold pushed arrays with word and count pairs
+// string.toLowerCase().split().sort((a, b) => a - b);
+  let masterArray = [];
+  let temp =  text.toLowerCase().split(' ').sort((a, b) => a - b);
+  temp.forEach(function(word) {
+    let tempArray = [];
+    if (!masterArray.includes(word)) {
+      // masterArray.push(element);
+      let countOccurrences = (temp, word) => temp.reduce((a, v) => (v === val ? a + 1 : a), 0);
+      tempArray.push(countOccurrences);
+      tempArray.push(word);
+    }
+    masterArray.push(tempArray);
+  })
+  console.log(masterArray.reverse());
+}
+
 function boldPassage(word, text) {
   let htmlString = "<p>";
   let textArray = text.split(" ");
