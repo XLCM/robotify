@@ -33,6 +33,30 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+function checkForBadWords(word) {
+  const offensiveWords = ['zoinks', 'muppeteer', 'biffaroni', 'loopdaloop'];
+  if (offensiveWords.includes(word)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+function omitOffensiveWords(text) {
+  const wordArray = text.split(" ");
+  let cleanWordArray = [];
+  wordArray.forEach(function(word) {
+    // if it is a bad word
+    if (checkForBadWords(word.toLowerCase())) {
+      cleanWordArray.push("[ CENSORED ]");
+      // if itn's not a bad word
+    } else {
+      cleanWordArray.push(word);
+    }
+  });
+  return cleanWordArray.join(" ");
+}
+
 function mostUsedWords(text) {
 // let counter = []; // empty array to hold pushed arrays with word and count pairs
 // string.toLowerCase().split().sort((a, b) => a - b);
@@ -79,5 +103,6 @@ $(document).ready(function(){
     $("#selected-count").html(numberOfOccurrencesInText(word, passage));
     // ui logic
     $('#bolded-passage').html(boldPassage(word, passage));
+    $('#print').html(omitOffensiveWords(passage));
   });
 });
