@@ -1,24 +1,9 @@
-/* NOTES
-
-numberfixer:
-check !isNaN;
-maybe parseInt and !isNaN?
-use digit regex
-
-//   function numberCheck(number) {
-//     return isNaN(number);
-//   if (isNaN(number)) {
-//     alert('You can only enter numbers in this field!');
-//   }
-
-*/
-
 // biz logic
 
 // define string responses
-const robotSound = "Won't you be my neighbor?";
-const beep = "Beep";
-const boop = "Boop";
+const robotSound = ' "Won\'t you be my neighbor?"';
+const beep = " Beep";
+const boop = " Boop";
 
 // checks number and returns corresponding string or number
 function numberIdentifier(number) {
@@ -26,11 +11,11 @@ function numberIdentifier(number) {
   if (temp.includes("3")) {
     return robotSound;
   } else if (temp.includes("2")) {
-    return "beep";
+    return beep;
   } else if (temp.includes("1")) {
-    return "boop";
+    return boop;
   } else {
-    return temp;
+    return " " + number;
   }
 }
 
@@ -40,7 +25,16 @@ function numberConverter(number) {
   for (let i = 0; i <= number; i++) {
     arr.push(numberIdentifier(i));
   }
-  console.log(arr);
+  return arr;
 }
 
 // ui logic
+$(document).ready(function () {
+  $("form#robotify").submit(function (event) {
+    event.preventDefault();
+    // biz logic
+    const number = $("#numberInput").val();
+    // ui logic
+    $("#robotSpeech").text(numberConverter(number));
+  });
+});
