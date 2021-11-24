@@ -4,3 +4,9 @@
   display: block;
   vertical-align: bottom;
 };
+
+.robotSpeech {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 5px;
+}

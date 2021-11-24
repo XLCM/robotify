@@ -1,120 +1,34 @@
-Describe: wordCounter()
+# r0b0t sp33ch
 
-Test: "It should return 1 if a passage has just one word."
-Code:
-const text = "hello";
-wordCounter(text);
-Expected Output: 1
+#### By: _Phil Curran / pecurran@hotmail.com_
 
-Test: "It should return 2 if a passage has two words."
-Code:
-const text = "hello there";
-wordCounter(text);
-Expected Output: 2
+#### This application translates a string of numbers to robot speech!
 
-Test: "It should return 0 for an empty string."
-Code: wordCounter("");
-Expected Output: 0
+## Technologies Used
 
-Test: "It should return 0 for a string that is only spaces."
-Code: wordCounter("            ");
-Expected Output: 0
-
-Test: "It should not count numbers as words."
-Code: wordCounter("hi there 77 19");
-Expected Output: 2
+* HTML
+* CSS
+* SkeletonUI (v2.0.4)
+* JQuery (v3.6.0)  
 
 
-Describe: numberOfOccurrencesInText()
+## Description
 
-Test: "It should return 0 occurrences of a word for an empty string."
-Code:
-const text = "";
-const word = "red";
-numberOfOccurrencesInText(word, text);
-Expected Output: 0
+User enters a number info a field, and javascript counts sequentially from 0 to the entered number and translates numbers into robot speech. 
 
-Test: "It should return 1 occurrence of a word when the word and the text are the same."
-Code:
-const text = "red";
-const word = "red";
-numberOfOccurrencesInText(word, text);
-Expected Output: 1
-
-Test: "It should return 0 occurrences of a word when the word and the text are different."
-Code:
-const text = "red";
-const word = "blue";
-numberOfOccurrencesInText(word, text);
-Expected Output: 0
-
-Test: "It should return the number of occurrences of a word."
-Code:
-const text = "red blue red red red green";
-const word = "red";
-numberOfOccurrencesInText(word, text);
-Expected Output: 4
-
-Test: "It should return a word match regardless of case."
-Code:
-const text = "red RED Red green Green GREEN";
-const word = "Red";
-numberOfOccurrencesInText(word, text);
-Expected Output: 3
-
-Test: "It should return a word match regardless of punctuation."
-Code:
-const text = "Red! Red. I like red, green, and yellow.";
-const word = "Red";
-numberOfOccurrencesInText(word, text);
-Expected Output: 3
-
-Test: "If an empty string is passed in as a word, it should return 0."
-Code:
-const word = "";
-const text = "red RED Red!";
-wordCounter(word, text);
-Expected Output: 0
+On clicking 'submit,' Mr. Robot appears and .  
 
 
-Describe: boldPassage()
+## Setup/Installation Requirements
 
-Test: "It should return a non-matching word in a p tag."
-Code:
-const word = "hello";
-const text = "yo";
-boldPassage(word, text);
-Expected Output: "<p>yo</p>"
+* Just clone and run with LiveServer!  
 
-Test: "It should return a matching word in a b tag."
-Code:
-const word = "hello";
-const text = "hello";
-boldPassage(word, text);
-Expected Output: "<p><b>hello</b></p>"
+## Known Bugs
 
-Test: "It should wrap words that match in `b` tags but not words that don't."
-Code:
-const word = "hello";
-const text = "hello there";
-boldPassage(word, text);
-Expected Output: "<p><b>hello</b> there</p>"
+* NONE
 
+## License
 
-Describe: mostUsedWords()
+Find a bug?  Want to make this app even more rad?  Fork and tweak to your heart's content!  Then let me know what you did.  
 
-Test: "Should return string as lowercase"
-Code: 
-text = "Hi there hey yo hi hi yay yo whoa there whoa... yay!"
-string.toLowerCase()
-Expected Output: "hi there hey yo hi hi yay yo woa there woa... yay!"
-
-Test: Should split string into array.
-text = "hi there hey yo hi hi yay yo woa there woa... yay!";
-mostUsedWords(text);
-Expected Output: ['hi', 'there', 'hey', 'yo', 'hi', 'hi', 'yay', 'yo', 'whoa', 'there', 'whoa...', 'yay!'];
-
-Test: Should return a sorted array of words in alphabetical order
-text = "hi there hey yo hi hi yay yo woa there woa... yay!";
-mostUsedWords(text);
-Expected Output: ['hi', 'there', 'hey', 'yo', 'hi', 'hi', 'yay', 'yo', 'whoa', 'there', 'whoa...', 'yay!'];
+Copyright (c) 14NOV2021 _Phil Curran_

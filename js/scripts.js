@@ -34,11 +34,12 @@ $(document).ready(function () {
   $("#robotSpeech").hide();
   $("form#robotify").submit(function (event) {
     event.preventDefault();
-    $("#robotSpeech").fadeIn(1000);
-    $("#mrRobot").fadeIn(500);
     // biz logic
     const number = $("#numberInput").val();
     // ui logic
+    $("#mrRobot").fadeIn(500);
+    $("#robotSpeech").fadeIn(1000);
     $("#robotSpeech").text(numberConverter(number) + ".");
+    $("#numberInput").val("");
   });
 });
