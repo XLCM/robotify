@@ -30,11 +30,15 @@ function numberConverter(number) {
 
 // ui logic
 $(document).ready(function () {
+  $("#mrRobot").hide();
+  $("#robotSpeech").hide();
   $("form#robotify").submit(function (event) {
     event.preventDefault();
+    $("#robotSpeech").fadeIn(1000);
+    $("#mrRobot").fadeIn(500);
     // biz logic
     const number = $("#numberInput").val();
     // ui logic
-    $("#robotSpeech").text(numberConverter(number));
+    $("#robotSpeech").text(numberConverter(number) + ".");
   });
 });
